@@ -71,8 +71,8 @@ $validation_steps = '' # 每经过X步训练后进行一次验证
 
 $tracker_project_name = '' # 设置不同的项目名称，以便在使用 Accelerate 库时正确初始化跟踪器
 
+# —————— 下方勿动！ —————— #
 
-# 创建参数数组
 $args_list = @()
 
 if ($pretrained_model) {

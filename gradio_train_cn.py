@@ -4,6 +4,7 @@ import subprocess
 import webbrowser
 from gen_json import generate_json
 from convert_model import convert
+from gradio_controlnet_lllite import cnlite
 
 # 设置MKL使用单线程
 os.environ["MKL_THREADING_LAYER"] = "GNU"
@@ -218,5 +219,7 @@ with gr.Blocks(theme=custom_theme) as main_interface:
                     tools_interface.render()
                 with gr.TabItem("模型转换"):
                     convert_model.render()
+                with gr.TabItem("训练controlnet_lllite"):
+                    cnlite.render()
 
 main_interface.launch(server_port=8080, share=True) 

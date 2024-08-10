@@ -57,6 +57,7 @@ ___
 |-----------|-----------------------------------|
 | gradio_train_cn.py     |     可以有交互操作的UI界面
 | controlnet_train_15andXL.py     | 训练代码，可以直接使用训练模型      ||
+| sdxl_train_control_net_lllite.py    | controlnet_lllite训练代码，可以直接使用      ||
 | controlnet_train.ps1     | 训练脚本，可以在脚本中写入参数而使用  ||
 | convert_model.py | 配合UI界面的转换模型文件 ||
 | gen_json_file.py     | 配合UI界面的json文件生成文件   ||
@@ -85,7 +86,25 @@ ___
 3. 激活环境：```conda activate controlnettrain```
 4. 安装其他依赖：```pip install -r requirements.txt ```
 5. 在终端中输入：```python gradio_train_cn.py``` 启动页面
-6. 在激活的环境中输入：```pip install xformers ``` 启用xformers的内存高效注意力机制
+6. （可选择）在激活的环境中输入：```pip install xformers ``` 启用xformers的内存高效注意力机制
+7. （需注意）需要diffusers=0.30.0.dev0。如果通过pip Install的方式不能下载到正确版本的话，请参考一下步骤：
+    1. cd 项目根目录文件夹
+    2. 终端中输入：```git clone https://github.com/huggingface/diffusers```
+    3. cd diffusers
+    4. 激活环境后输入：```pip install .```
+8. flash-attention的安装
+    1. 方法（一）：
+        - cd 你的项目文件根目录
+        - ```git clone https://github.com/Dao-AILab/flash-attention.git```
+        - cd flash-attention
+        - python setup.py install
+    2. 方法（二）：
+        - 进入：https://github.com/Dao-AILab/flash-attention/releases
+        - 在Assets中选择合适的版本，下载并放入到你的项目文件夹里
+        - 执行：```pip install flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl```（"flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl" 指的是你下载文件的名字）
+
+
+
 
 <br>
 

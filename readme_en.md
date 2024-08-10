@@ -57,6 +57,7 @@ ___
 |-----------|-----------------------------------|
 | gradio_train_cn.py     |     UI interface with interactive operation面
 | controlnet_train_15andXL.py     | Training code can be directly used to train the model      ||
+| sdxl_train_control_net_lllite.py    | controlnet_lllite training code, can be directly used      ||
 | controlnet_train.ps1     | Training script, which can be used by writing parameters in the script  ||
 | convert_model.py | Convert model files in conjunction with the UI interface ||
 | gen_json_file.py     | Generate a JSON file in conjunction with the UI interface   ||
@@ -92,6 +93,17 @@ ___
     2. Enter ```git clone https://github.com/huggingface/diffusers ``` in the terminal
     3. cd diffusers
     4. After activating the environment, enter: ```pip install .```
+8. Installation of flash-attention
+    1. Method (I):
+        - cd your project file root directory
+        - ```git clone https://github.com/Dao-AILab/flash-attention.git```
+        - cd flash-attention
+        - python setup.py install
+    2. Method (II):
+        - Go to: https://github.com/Dao-AILab/flash-attention/releases
+        - Select the appropriate version in Assets, download and put it in your project folder
+        - Execute: ```pip install flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl```("flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl" is the name of the file you downloaded)
+
 
 <br>
 
