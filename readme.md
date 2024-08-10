@@ -116,6 +116,8 @@ ___
 ![](asset/model_converter.png)
 JSON文件生成页面
 ![](asset/jsonfile.png)
+controlnet_lllite模型训练页面
+![](asset/controlnet_lllite.png)
 
 <br>
 

@@ -115,6 +115,8 @@ Model Conversion Page：
 ![](asset/model_converter.png)
 JSON file generation page：
 ![](asset/jsonfile.png)
+controlnet_lllite model training page
+![](asset/controlnet_lllite.png)
 
 <br>
 

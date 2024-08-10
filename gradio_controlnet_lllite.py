@@ -3,29 +3,20 @@ import subprocess
 
 def launch_training(pretrained_model_name_or_path, vae, no_half_vae, train_data_dir, conditioning_data_dir, resolution, cache_latents, vae_batch_size, 
                     cache_latents_to_disk,
-
                     caption_extension, max_token_length, keep_tokens, caption_dropout_rate, caption_dropout_every_n_epochs, caption_tag_dropout_rate, clip_skip,
                     debiased_estimation_loss, weighted_captions, cache_text_encoder_outputs, cache_text_encoder_outputs_to_disk, 
-
                     train_batch_size, dataset_repeats, max_train_epochs, max_train_steps, 
-
                     save_precision, save_every_n_epochs, save_every_n_steps, save_last_n_epochs, 
                     save_last_n_epochs_state, save_last_n_steps, save_last_n_steps_state, save_state, save_state_on_train_end, 
                     output_dir, output_name, 
-
                     optimizer_type, learning_rate, max_grad_norm, lr_scheduler, lr_warmup_steps, 
                     lr_scheduler_num_cycles, lr_scheduler_power, cond_emb_dim, network_dim, 
-
                     console_log_level, logging_dir, log_with, log_prefix, 
                     log_tracker_name, wandb_run_name, log_tracker_config, wandb_api_key,
-                    
                     resume, mem_eff_attn, torch_compile, xformers, 
-                    
                     max_data_loader_n_workers, persistent_data_loader_workers, 
                     seed, gradient_checkpointing, gradient_accumulation_steps, mixed_precision, full_fp16, full_bf16, fp8_base, 
-                    
-                    lowram, highvram
-                    ):
+                    lowram, highvram):
     
     command = [
         "accelerate", "launch", "./sdxl_train_control_net_lllite.py",
@@ -163,7 +154,7 @@ cnlite = gr.Interface(
         gr.Number(label="network_dim", value=64),
 
         gr.Dropdown(choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], label="日志信息在控制台的输出级别 Console Log Level", value="INFO"),
-        gr.Textbox(label="日志文件夹 Logging Directory", value="./logs"),
+        gr.Textbox(label="日志文件夹 Logging Directory", value="./log"),
         gr.Dropdown(choices=["tensorboard", "wandb"], label="日志模块 Log with", value="tensorboard"),
         gr.Textbox(label="日志前缀 Log Prefix"),
         gr.Textbox(label="日志跟踪器名称 Log Tracker Name"),
@@ -191,6 +182,6 @@ cnlite = gr.Interface(
     title="controlnet_lllite模型训练（SDXL）",
     submit_btn="开始训练",
     clear_btn="清空参数",
-    allow_flagging='never',  # 禁用 Flag 按钮
+    allow_flagging='never', 
     description="输入各个参数训练属于你的controlnet_lllite模型"
 )
