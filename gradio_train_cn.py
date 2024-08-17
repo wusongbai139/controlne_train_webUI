@@ -5,6 +5,7 @@ import webbrowser
 from gen_json import generate_json
 from convert_model import convert
 from gradio_controlnet_lllite import cnlite
+from gradio_hunyuanDit_cn import hunyuancn
 
 # 设置MKL使用单线程
 os.environ["MKL_THREADING_LAYER"] = "GNU"
@@ -221,5 +222,7 @@ with gr.Blocks(theme=custom_theme) as main_interface:
                     convert_model.render()
                 with gr.TabItem("训练controlnet_lllite"):
                     cnlite.render()
+                with gr.TabItem("训练huanyuandit_controlnet"):
+                    hunyuancn.render()
 
 main_interface.launch(server_port=8080, share=True) 

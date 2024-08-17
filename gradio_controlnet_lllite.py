@@ -94,7 +94,7 @@ def launch_training(pretrained_model_name_or_path, vae, no_half_vae, train_data_
         "--fp8_base", str(fp8_base),
 
         "--lowram", str(lowram),
-        "--highvram", str(highvram),
+        "--highvram", str(highvram)
     ]
     command = [arg for arg in command if arg != '']  
     subprocess.run(command, check=True)
@@ -176,7 +176,7 @@ cnlite = gr.Interface(
         gr.Checkbox(label="启用完全bf16精度训练 Enable Full BF16"),
         gr.Checkbox(label="启用fp8训练 Enable FP8 Base"),
         gr.Checkbox(label="启用低内存模式 Enable LowRAM"),
-        gr.Checkbox(label="启用高显存模式 Enable HighVRAM"),
+        gr.Checkbox(label="启用高显存模式 Enable HighVRAM")
     ],
     outputs="text",
     title="controlnet_lllite模型训练（SDXL）",
