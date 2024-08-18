@@ -7,7 +7,7 @@ def launch_training(grad_accu_steps, lr, weight_decay,batch_size, epochs, predic
                     warmup_min_lr, warmup_num_steps, target_modules, index_file, random_flip, reso_step, rope_img, rope_real):
     
     command = [
-        "accelerate", "launch", "./gradio_hunyuanDit_cn.py",
+        "accelerate", "launch", "./train_hunyuanDit_cn.py",
         "--grad_accu_steps", str(grad_accu_steps),
         "--lr", str(lr),
         "--weight_decay", str(weight_decay),

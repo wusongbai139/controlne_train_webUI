@@ -81,18 +81,18 @@ ___
 ![torch](https://img.shields.io/badge/torch-%3E%3D2.3-red.svg)
 
 ### 安装依赖（推荐使用conda部署）
-1. 建立虚拟环境+安装依赖。
-2. 建立环境：```conda create --name controlnettrain python=3.10```
-3. 激活环境：```conda activate controlnettrain```
-4. 安装其他依赖：```pip install -r requirements.txt ```
-5. 在终端中输入：```python gradio_train_cn.py``` 启动页面
-6. （可选择）在激活的环境中输入：```pip install xformers ``` 启用xformers的内存高效注意力机制
-7. （需注意）需要diffusers=0.30.0.dev0。如果通过pip Install的方式不能下载到正确版本的话，请参考一下步骤：
+#### 一、SD15 and SDXL
+1. 建立环境：```conda create --name controlnettrain python=3.10```
+2. 激活环境：```conda activate controlnettrain```
+3. 安装其他依赖：```pip install -r requirements.txt ```
+4. 在终端中输入：```python gradio_train_cn.py``` 启动页面
+5. （可选择）在激活的环境中输入：```pip install xformers ``` 启用xformers的内存高效注意力机制
+6. （需注意）需要diffusers=0.30.0.dev0。如果通过pip Install的方式不能下载到正确版本的话，请参考一下步骤：
     1. cd 项目根目录文件夹
     2. 终端中输入：```git clone https://github.com/huggingface/diffusers```
     3. cd diffusers
     4. 激活环境后输入：```pip install .```
-8. flash-attention的安装
+7. flash-attention的安装
     1. 方法（一）：
         - cd 你的项目文件根目录
         - ```git clone https://github.com/Dao-AILab/flash-attention.git```
@@ -102,7 +102,12 @@ ___
         - 进入：https://github.com/Dao-AILab/flash-attention/releases
         - 在Assets中选择合适的版本，下载并放入到你的项目文件夹里
         - 执行：```pip install flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl```（"flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl" 指的是你下载文件的名字）
-
+#### 二、HunyuanDit
+1. 激活环境：```conda activate controlnettrain```
+2. 安装依赖：```pip install deepspeed  peft```
+3. ```cd IndexKits```
+4. ```pip install -e . ```
+5. ``` pip install matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78 ```
 
 
 
@@ -118,6 +123,8 @@ JSON文件生成页面
 ![](asset/jsonfile.png)
 controlnet_lllite模型训练页面
 ![](asset/controlnet_lllite.png)
+HunyuanDit_controlnet模型训练页面
+![](asset/hunyuanDit.png)
 
 <br>
 
@@ -149,8 +156,15 @@ controlnet_lllite模型训练页面
     |-- unet
     |-- vae
     ```
-3. 模型放置
-放在任意路径即可，但是为了管理方便，建议在训练根目录下建立相关文件，统一管理。
+3. hunyuanDit
+- 模型下载：
+    ```
+    huggingface-cli download Tencent-Hunyuan/HYDiT-ControlNet-v1.1 --local-dir ./HunyuanDiT-v1.1/t2i/controlnet
+    huggingface-cli download Tencent-Hunyuan/Distillation-v1.1 ./pytorch_model_distill.pt --local-dir ./HunyuanDiT-v1.1/t2i/model
+    ```
+
+
+
 
 <br>
 
@@ -183,16 +197,17 @@ ___
 <br>
 
 - controlnet 
-  - [x] controlnet
-  - [x] controlnet_lllite（轻量版本）
-- Pretrained Model
   - [x] SD15
   - [x] SDXL
+    - [x] controlnet_lllite（轻量版本）
+  - [x] HunyuanDit
   - [ ] SD3
   - [ ] Kolors
 - train
   - [ ] 一键安装包
   - [ ] 更多新功能（优化器、参数等）
+- data
+  - …
 
 <br>
 

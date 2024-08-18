@@ -81,19 +81,19 @@ ___
 ![torch](https://img.shields.io/badge/torch-%3E%3D2.3-red.svg)
 
 ### Install
+#### 一、SD15 and SDXL
 (Recommended to use conda deployment)
-1. Establish a virtual environment and install dependencies.
-2. Create environment: ```conda create -- name controlletrain Python=3.10```
-3. Activation environment: ```conda activate control net rain```
-4. Install other dependencies: ```pip install - r requirements. txt```
-5. Enter: ```python gradio_train_cn.py startup page in the terminal```
-6. (Optional)Enter ```pip install xforms``` in the activated environment to enable the memory efficient attention mechanism of xforms
-7. (Note!) diffusers=0.30.0.dev0 is required. If the correct version cannot be downloaded through pip Install, please refer to the following steps:
+1. Create environment: ```conda create -- name controlletrain Python=3.10```
+2. Activation environment: ```conda activate control net rain```
+3. Install other dependencies: ```pip install - r requirements. txt```
+4. Enter: ```python gradio_train_cn.py startup page in the terminal```
+5. (Optional)Enter ```pip install xforms``` in the activated environment to enable the memory efficient attention mechanism of xforms
+6. (Note!) diffusers=0.30.0.dev0 is required. If the correct version cannot be downloaded through pip Install, please refer to the following steps:
     1. cd [ your project root directory folder ]
     2. Enter ```git clone https://github.com/huggingface/diffusers ``` in the terminal
     3. cd diffusers
     4. After activating the environment, enter: ```pip install .```
-8. Installation of flash-attention
+7. Installation of flash-attention
     1. Method (I):
         - cd your project file root directory
         - ```git clone https://github.com/Dao-AILab/flash-attention.git```
@@ -104,6 +104,12 @@ ___
         - Select the appropriate version in Assets, download and put it in your project folder
         - Execute: ```pip install flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl```("flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl" is the name of the file you downloaded)
 
+#### 二、HunyuanDit
+1. Activation environment：```conda activate controlnettrain```
+2. Install other dependencies：```pip install deepspeed  peft```
+3. ```cd IndexKits```
+4. ```pip install -e . ```
+5. ``` pip install matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78 ```
 
 <br>
 
@@ -117,6 +123,8 @@ JSON file generation page：
 ![](asset/jsonfile.png)
 controlnet_lllite model training page
 ![](asset/controlnet_lllite.png)
+HunyuanDit_controlnet training page
+![](asset/hunyuanDit.png)
 
 <br>
 
@@ -150,8 +158,12 @@ controlnet_lllite model training page
     |-- vae
     -- model_index.json
     ```
-3. Model file location
-It can be placed in any path, but for the convenience of management, it is recommended to create relevant files in the training root directory for unified management.
+3. 3. hunyuanDit
+- Model download：
+    ```
+    huggingface-cli download Tencent-Hunyuan/HYDiT-ControlNet-v1.1 --local-dir ./HunyuanDiT-v1.1/t2i/controlnet
+    huggingface-cli download Tencent-Hunyuan/Distillation-v1.1 ./pytorch_model_distill.pt --local-dir ./HunyuanDiT-v1.1/t2i/model
+    ```
 
 <br>
 
@@ -183,17 +195,18 @@ ___
 
 <br>
 
-- controlnet 
-  - [x] controlnet
-  - [x] controlnet_lllite(Lightweight version)
-- Pretrained Model
+- controlnet
   - [x] SD15
   - [x] SDXL
+    - [x] controlnet_lllite(Lightweight version)
+  - [x] HunyuanDit
   - [ ] SD3
   - [ ] Kolors
 - train
   - [ ] portable standalone build
   - [ ] More new features (optimizer, parameters, etc.)
+- data
+  - …
 
 <br>
 
