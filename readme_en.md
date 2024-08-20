@@ -106,10 +106,12 @@ ___
 
 #### 二、HunyuanDit
 1. Activation environment：```conda activate controlnettrain```
-2. Install other dependencies：```pip install deepspeed  peft```
-3. ```cd IndexKits```
-4. ```pip install -e . ```
-5. ``` pip install matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78 ```
+2. Install other dependencies：
+    ```
+    pip install deepspeed  peft matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78
+    cd IndexKits
+    pip install -e . 
+    ```
 
 <br>
 

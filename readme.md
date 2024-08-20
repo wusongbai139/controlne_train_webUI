@@ -104,10 +104,12 @@ ___
         - 执行：```pip install flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl```（"flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl" 指的是你下载文件的名字）
 #### 二、HunyuanDit
 1. 激活环境：```conda activate controlnettrain```
-2. 安装依赖：```pip install deepspeed  peft```
-3. ```cd IndexKits```
-4. ```pip install -e . ```
-5. ``` pip install matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78 ```
+2. 安装依赖：
+    ```
+    pip install deepspeed  peft matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78
+    cd IndexKits
+    pip install -e . 
+    ```
 
 
 
