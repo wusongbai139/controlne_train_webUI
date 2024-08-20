@@ -1,11 +1,11 @@
 import os
 import json
 
-conditioning_image_folder = ""
-image_folder = ""
-text_folder = ""
+conditioning_image_folder = r"H:\AIGC\models\controlnet\hallucinate\trainqrcode3\conditioning_image"
+image_folder = r"H:\AIGC\models\controlnet\hallucinate\trainqrcode3\image"
+text_folder = r"H:\AIGC\models\controlnet\hallucinate\trainqrcode3\text"
 
-output_path = ""  # 指定保存train.json文件的路径
+output_path = r"H:\AIGC\models\controlnet\hallucinate\trainqrcode3\train.json"  # 指定保存train.json文件的路径
 
 conditioning_images = os.listdir(conditioning_image_folder)
 images = os.listdir(image_folder)
