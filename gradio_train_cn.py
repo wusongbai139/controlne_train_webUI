@@ -84,7 +84,7 @@ def launch_training(model_type, pretrained_model_path, vae='', controlnet_model=
         "--validation_steps", str(validation_steps) if validation_steps else '',
         "--tracker_project_name", tracker_project_name,
     ]
-    command = [arg for arg in command if arg != '']  # 去除空参数
+    command = [arg for arg in command if arg != '']  #  去除空参数
     subprocess.run(command, check=True)
     return "训练已启动，参数已经传递。"
 

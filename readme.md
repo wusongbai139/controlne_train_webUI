@@ -1,8 +1,9 @@
 ![](asset/train.png)
 
 <p align="left">
-    中文</a>&nbsp ｜ &nbsp<a href="readme_en.md">🌍 EN</a>&nbsp
+    中文&nbsp;｜&nbsp;<a href="./readme.md">🌍 EN</a>&nbsp;
 </p>
+
 
 📃 **controlnet_train_webUI** (原 [controlnet_TrainingPackage](https://github.com/wusongbai139/controlnet_TrainingPackage))
 
@@ -15,15 +16,16 @@
 ## 目录  
  <br>
 
-* [概述](README.md#概述)
-* [文件介绍](README.md#文件介绍)
-* [安装部署](README.md#安装部署)
-    * [环境推荐](README.md#环境推荐)
-    * [安装依赖](README.md#安装依赖)
-    * [预训练模型下载](README.md#预训练模型下载)
-* [训练流程](README.md#训练流程)
-* [开发计划](README.md#开发计划)
-* [联系](README.md#联系)
+* [概述](#概述)
+* [文件介绍](#文件介绍)
+* [安装部署](#安装部署)
+    * [环境推荐](#环境推荐)
+    * [安装依赖](R#安装依赖)
+    * [预训练模型下载](#预训练模型下载)
+* [训练流程](#训练流程)
+* [作者相关配套开源资源](#作者相关配套开源资源)
+* [开发计划](#开发计划)
+* [联系](#联系)
 
 <br>
 
@@ -84,10 +86,10 @@ ___
 #### 一、SD15 and SDXL
 1. 建立环境：```conda create --name controlnettrain python=3.10```
 2. 激活环境：```conda activate controlnettrain```
-3. 安装其他依赖：```pip install -r requirements.txt ```
+3. 安装依赖：```pip install -r requirements.txt ```
 4. 在终端中输入：```python gradio_train_cn.py``` 启动页面
 5. （可选择）在激活的环境中输入：```pip install xformers ``` 启用xformers的内存高效注意力机制
-6. （需注意）需要diffusers=0.30.0.dev0。如果通过pip Install的方式不能下载到正确版本的话，请参考一下步骤：
+6. 需要diffusers=0.30.0.dev0。步骤：
     1. cd 项目根目录文件夹
     2. 终端中输入：```git clone https://github.com/huggingface/diffusers```
     3. cd diffusers
@@ -102,6 +104,7 @@ ___
         - 进入：https://github.com/Dao-AILab/flash-attention/releases
         - 在Assets中选择合适的版本，下载并放入到你的项目文件夹里
         - 执行：```pip install flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl```（"flash_attn-2.6.3+cu118torch2.cxx11abiTRUE-cp311-cp311-linux_x86_64.whl" 指的是你下载文件的名字）
+
 #### 二、HunyuanDit
 1. 激活环境：```conda activate controlnettrain```
 2. 安装依赖：
@@ -110,8 +113,6 @@ ___
     cd IndexKits
     pip install -e . 
     ```
-
-
 
 <br>
 
@@ -165,9 +166,6 @@ HunyuanDit_controlnet模型训练页面
     huggingface-cli download Tencent-Hunyuan/Distillation-v1.1 ./pytorch_model_distill.pt --local-dir ./HunyuanDiT-v1.1/t2i/model
     ```
 
-
-
-
 <br>
 
 ___
@@ -191,6 +189,27 @@ ___
 <br>
 
 ___
+<br>
+
+## 作者相关配套开源资源
+![](asset/model_img.png)
+
+1. 开源训练集 https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
+    - 数据集3000张[qrcode_xl_test_data] https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
+        ```
+        qrcode_xl_test_data
+        |_ conditioning_image 3000
+        |_ image 3000
+        |_ text 3000
+        ```
+
+2. 使用[qrcode_xl_test_data]训练的qrocde_xl_test模型
+    - 链接：https://huggingface.co/songbaijun/qrocde_xl_test_3000
+    - 权重为2，会有效果
+
+<br>
+___
+
 
 <br>
 

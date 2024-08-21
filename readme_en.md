@@ -1,7 +1,7 @@
 ![](asset/train.png)
 
 <p align="left">
-    🌍 EN</a>&nbsp ｜ &nbsp<a href="readme.md">中文</a>&nbsp
+    🌍 EN&nbsp;｜&nbsp;<a href="./readme.md">中文</a>&nbsp;
 </p>
 
 📃 **controlnet_train_webUI** (Original project address： [controlnet_TrainingPackage](https://github.com/wusongbai139/controlnet_TrainingPackage))
@@ -15,15 +15,16 @@
 ## Directory  
  <br>
 
-* [Overview](README.md#overview)
-* [Document](README.md#Document)
-* [Deployment](README.md#Deployment)
-    * [Environment](README.md#Environment)
-    * [Install](README.md#Install)
-    * [Model Download](README.md#ModelDownload)
-* [Training](README.md#训练流程)
-* [plan](README.md#plan)
-* [contact](README.md#contact)
+* [Overview](#overview)
+* [Document Introduction](#document-introduction)
+* [Deployment](#deployment)
+    * [Environment](#environment)
+    * [Install](#install)
+    * [Model Download](#model-download)
+* [Training](#training)
+* [Author related supporting open source resources](#author-related-supporting-open-source-resources)
+* [Plan](#plan)
+* [Contact](#contact)
 
 <br>
 
@@ -31,7 +32,7 @@ ___
 
 <br>
 
-## overview
+## Overview
 
 <br>
 🤖️ The project of training the ControlNet model using diffusers is planned to integrate the training of various pre trained ControlNet models.
@@ -88,7 +89,7 @@ ___
 3. Install other dependencies: ```pip install - r requirements. txt```
 4. Enter: ```python gradio_train_cn.py startup page in the terminal```
 5. (Optional)Enter ```pip install xforms``` in the activated environment to enable the memory efficient attention mechanism of xforms
-6. (Note!) diffusers=0.30.0.dev0 is required. If the correct version cannot be downloaded through pip Install, please refer to the following steps:
+6. (Note!) diffusers=0.30.0.dev0 is required :
     1. cd [ your project root directory folder ]
     2. Enter ```git clone https://github.com/huggingface/diffusers ``` in the terminal
     3. cd diffusers
@@ -131,7 +132,7 @@ HunyuanDit_controlnet training page
 <br>
 
 
-### ModelDownload
+### Model Download
 
 1. SD15
 - Model download address：[https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main](https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main)
@@ -193,7 +194,30 @@ ___
 
 <br>
 
-## plan
+## Author related supporting open source resources
+![](asset/model_img.png)
+
+1. Open source training set https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
+    - data sets[qrcode_xl_test_data] https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
+        ```
+        qrcode_xl_test_data
+        |_ conditioning_image 3000
+        |_ image 3000
+        |_ text 3000
+        ```
+
+2. The qrocde-xx_test model trained using [qrcode-xx_test_data]
+    - model：https://huggingface.co/songbaijun/qrocde_xl_test_3000
+    - Weight of 2 will have an effect
+
+<br>
+___
+
+___
+
+<br>
+
+## Plan
 
 <br>
 
@@ -216,7 +240,7 @@ ___
 
 <br>
 
-## contact：
+## Contact：
 
 <br>
 ai松柏君
