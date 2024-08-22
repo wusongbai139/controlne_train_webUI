@@ -194,7 +194,7 @@ ___
 ## 作者相关配套开源资源
 ![](asset/model_img.png)
 
-1. 开源训练集 https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
+1. 开源训练集
     - 数据集3000张[qrcode_xl_test_data] https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
         ```
         qrcode_xl_test_data

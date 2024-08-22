@@ -109,7 +109,7 @@ ___
 1. Activation environment：```conda activate controlnettrain```
 2. Install other dependencies：
     ```
-    pip install deepspeed  peft matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78
+    pip install deepspeed  peft matplotlib==3.7.5 onnxruntime_gpu==1.16.3 opencv-python==4.8.1.78 
     cd IndexKits
     pip install -e . 
     ```
@@ -197,7 +197,7 @@ ___
 ## Author related supporting open source resources
 ![](asset/model_img.png)
 
-1. Open source training set https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
+1. Open source training set
     - data sets[qrcode_xl_test_data] https://huggingface.co/datasets/songbaijun/qrcode_xl_test_data
         ```
         qrcode_xl_test_data
