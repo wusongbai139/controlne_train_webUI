@@ -209,6 +209,8 @@ ___
 2. The qrocde-xx_test model trained using [qrcode-xx_test_data]
     - model：https://huggingface.co/songbaijun/qrocde_xl_test_3000
     - Weight of 2 will have an effect
+    
+3. 训练教程 https://www.bilibili.com/video/BV1qsWYeuEFy/?spm_id_from=333.999.0.0
 
 <br>
 ___

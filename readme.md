@@ -207,6 +207,8 @@ ___
     - 链接：https://huggingface.co/songbaijun/qrocde_xl_test_3000
     - 权重为2，会有效果
 
+3. 训练教程 https://www.bilibili.com/video/BV1qsWYeuEFy/?spm_id_from=333.999.0.0
+
 <br>
 ___
 
